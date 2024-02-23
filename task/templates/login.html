@@ -1,0 +1,88 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-vertical-style="overlay" data-theme-mode="light" data-header-styles="light" data-menu-styles="light" data-toggled="close">
+ 
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login - Admin</title>
+    <link href='{% static "css/styles.css" %}' rel="stylesheet" />
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+	<meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static "assets/logo.ico" %}">
+
+    <!-- Main Theme Js -->
+    <script src="{% static "assets/js/authentication-main.js" %}"></script>
+
+    <!-- Bootstrap Css -->
+    <link id="style" href="{% static "assets/libs/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="{% static "assets/css/styles.min.css" %}" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="{% static "assets/css/icons.min.css" %}" rel="stylesheet" >
+
+
+</head>
+
+<body>
+
+    <!-- Start Switcher -->
+    
+    <!-- End Switcher -->
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center authentication authentication-basic h-100">
+            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-6 col-sm-8 col-12">
+                {% comment %} <div class="my-5 d-flex justify-content-center">
+                    <a href="index.html">
+                        <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                        <img src="../assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                    </a>
+                </div> {% endcomment %}
+                <div class="card custom-card">
+                    <div class="card-body p-5">
+                        <p class="h5 fw-semibold mb-2 text-center">Iniciar Sesión</p>
+                        <p class="mb-4 text-muted op-7 fw-normal text-center">Bienvenido!</p>
+                        <div class="row gy-3">
+                            <form action="/login/" method="POST">
+                                {% csrf_token %}
+                                {{error}}
+                                <div class="col-xl-12">
+                                    <label class="form-label text-default" for="id_username">Nombre de usuario</label>
+                                    <input class="form-control form-control-lg" type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
+                                </div>
+                                <div class="col-xl-12 mb-2">
+                                    <label for="id_password" class="form-label text-default d-block">Contraseña</label>
+                                    <input class="form-control form-control-lg" required id="id_password" autocomplete="current-password" name="password" type="password">
+                                </div>
+                                <div class="col-xl-12 d-grid mt-2">
+                                    <button href="" class="btn btn-lg btn-primary">Iniciar Sesión</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="{% static "assets/libs/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+
+    <script src="{% static "js/scripts.js" %}"></script>
+
+    <!-- Show Password JS -->
+    <script src="{% static "assets/js/show-password.js" %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1076 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Dashboard - Admin </title>
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+	<meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+    <link href="{% static "css/arreglo.css" %}" rel="stylesheet" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static "assets/logo.ico" %}">
+    
+    <!-- Choices JS -->
+    <script src='{% static "assets/libs/choices.js/public/assets/scripts/choices.min.js" %}'></script>
+
+    <!-- Main Theme Js -->
+    <script src="{% static "assets/js/main.js" %}"></script>
+    
+    <!-- Bootstrap Css -->
+    <link id="style" href="{% static "assets/libs/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="{% static "assets/css/styles.min.css" %}" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="{% static "assets/css/icons.css" %}" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="{% static "assets/libs/node-waves/waves.min.css" %}" rel="stylesheet" > 
+
+    <!-- Simplebar Css -->
+    <link href="{% static "assets/libs/simplebar/simplebar.min.css" %}" rel="stylesheet" >
+    
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="{% static "assets/libs/flatpickr/flatpickr.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/libs/@simonwep/pickr/themes/nano.min.css" %}">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="{% static "assets/libs/choices.js/public/assets/styles/choices.min.css" %}">
+
+    <!--DataTable-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
+
+</head>
+
+<body>
+ 
+    <!-- Start Switcher -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="switcher-canvas" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title text-default" id="offcanvasRightLabel">Switcher</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="border-bottom border-block-end-dashed">
+                <div class="nav nav-tabs nav-justified" id="switcher-main-tab" role="tablist">
+                    <button class="nav-link active" id="switcher-home-tab" data-bs-toggle="tab" data-bs-target="#switcher-home"
+                        type="button" role="tab" aria-controls="switcher-home" aria-selected="true">Theme Styles</button>
+                    <button class="nav-link" id="switcher-profile-tab" data-bs-toggle="tab" data-bs-target="#switcher-profile"
+                        type="button" role="tab" aria-controls="switcher-profile" aria-selected="false">Theme Colors</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active border-0" id="switcher-home" role="tabpanel" aria-labelledby="switcher-home-tab"
+                    tabindex="0">
+                    <div class="">
+                        <p class="switcher-style-head">Theme Color Mode:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-light-theme">
+                                        Light
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="theme-style" id="switcher-light-theme"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-dark-theme">
+                                        Dark
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="theme-style" id="switcher-dark-theme">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Directions:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-ltr">
+                                        LTR
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="direction" id="switcher-ltr" checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-rtl">
+                                        RTL
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="direction" id="switcher-rtl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Navigation Styles:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-vertical">
+                                        Vertical
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-style" id="switcher-vertical"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-horizontal">
+                                        Horizontal
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-style"
+                                        id="switcher-horizontal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navigation-menu-styles">
+                        <p class="switcher-style-head">Vertical & Horizontal Menu Styles:</p>
+                        <div class="row switcher-style gx-0 pb-2 gy-2">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-menu-click">
+                                        Menu Click
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-menu-styles"
+                                        id="switcher-menu-click">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-menu-hover">
+                                        Menu Hover
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-menu-styles"
+                                        id="switcher-menu-hover">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-icon-click">
+                                        Icon Click
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-menu-styles"
+                                        id="switcher-icon-click">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-icon-hover">
+                                        Icon Hover
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="navigation-menu-styles"
+                                        id="switcher-icon-hover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidemenu-layout-styles">
+                        <p class="switcher-style-head">Sidemenu Layout Styles:</p>
+                        <div class="row switcher-style gx-0 pb-2 gy-2">
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-default-menu">
+                                        Default Menu
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-default-menu" checked>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-closed-menu">
+                                        Closed Menu
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-closed-menu">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-icontext-menu">
+                                        Icon Text
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-icontext-menu">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-icon-overlay">
+                                        Icon Overlay
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-icon-overlay">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-detached">
+                                        Detached
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-detached">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-double-menu">
+                                        Double Menu
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="sidemenu-layout-styles"
+                                        id="switcher-double-menu">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Page Styles:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-regular">
+                                        Regular
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-styles" id="switcher-regular"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-classic">
+                                        Classic
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-styles" id="switcher-classic">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-modern">
+                                        Modern
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-styles" id="switcher-modern">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Layout Width Styles:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-full-width">
+                                        Full Width
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="layout-width" id="switcher-full-width"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-boxed">
+                                        Boxed
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="layout-width" id="switcher-boxed">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Menu Positions:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-menu-fixed">
+                                        Fixed
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="menu-positions" id="switcher-menu-fixed"
+                                        checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-menu-scroll">
+                                        Scrollable
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="menu-positions" id="switcher-menu-scroll">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Header Positions:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-header-fixed">
+                                        Fixed
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="header-positions"
+                                        id="switcher-header-fixed" checked>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-header-scroll">
+                                        Scrollable
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="header-positions"
+                                        id="switcher-header-scroll">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="switcher-style-head">Loader:</p>
+                        <div class="row switcher-style gx-0">
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-loader-enable">
+                                        Enable
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-loader"
+                                        id="switcher-loader-enable">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check switch-select">
+                                    <label class="form-check-label" for="switcher-loader-disable">
+                                        Disable
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="page-loader"
+                                        id="switcher-loader-disable" checked>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade border-0" id="switcher-profile" role="tabpanel" aria-labelledby="switcher-profile-tab" tabindex="0">
+                    <div>
+                        <div class="theme-colors">
+                            <p class="switcher-style-head">Menu Colors:</p>
+                            <div class="d-flex switcher-style pb-2">
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-white" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Light Menu" type="radio" name="menu-colors"
+                                        id="switcher-menu-light">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-dark" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Dark Menu" type="radio" name="menu-colors"
+                                        id="switcher-menu-dark" checked>
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Color Menu" type="radio" name="menu-colors"
+                                        id="switcher-menu-primary">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-gradient" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Gradient Menu" type="radio" name="menu-colors"
+                                        id="switcher-menu-gradient">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-transparent"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Transparent Menu"
+                                        type="radio" name="menu-colors" id="switcher-menu-transparent">
+                                </div>
+                            </div>
+                            <div class="px-4 pb-3 text-muted fs-11">Note:If you want to change color Menu dynamically change from below Theme Primary color picker</div>
+                        </div>
+                        <div class="theme-colors">
+                            <p class="switcher-style-head">Header Colors:</p>
+                            <div class="d-flex switcher-style pb-2">
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-white" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Light Header" type="radio" name="header-colors"
+                                        id="switcher-header-light" checked>
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-dark" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Dark Header" type="radio" name="header-colors"
+                                        id="switcher-header-dark">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Color Header" type="radio" name="header-colors"
+                                        id="switcher-header-primary">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-gradient" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Gradient Header" type="radio" name="header-colors"
+                                        id="switcher-header-gradient">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-transparent" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Transparent Header" type="radio" name="header-colors"
+                                        id="switcher-header-transparent">
+                                </div>
+                            </div>
+                            <div class="px-4 pb-3 text-muted fs-11">Note:If you want to change color Header dynamically change from below Theme Primary color picker</div>
+                        </div>
+                        <div class="theme-colors">
+                            <p class="switcher-style-head">Theme Primary:</p>
+                            <div class="d-flex flex-wrap align-items-center switcher-style">
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-1" type="radio"
+                                        name="theme-primary" id="switcher-primary">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-2" type="radio"
+                                        name="theme-primary" id="switcher-primary1">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-3" type="radio" name="theme-primary"
+                                        id="switcher-primary2">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-4" type="radio" name="theme-primary"
+                                        id="switcher-primary3">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-primary-5" type="radio" name="theme-primary"
+                                        id="switcher-primary4">
+                                </div>
+                                <div class="form-check switch-select ps-0 mt-1 color-primary-light">
+                                    <div class="theme-container-primary"></div>
+                                    <div class="pickr-container-primary"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="theme-colors">
+                            <p class="switcher-style-head">Theme Background:</p>
+                            <div class="d-flex flex-wrap align-items-center switcher-style">
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-1" type="radio"
+                                        name="theme-background" id="switcher-background">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-2" type="radio"
+                                        name="theme-background" id="switcher-background1">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-3" type="radio" name="theme-background"
+                                        id="switcher-background2">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-4" type="radio"
+                                        name="theme-background" id="switcher-background3">
+                                </div>
+                                <div class="form-check switch-select me-3">
+                                    <input class="form-check-input color-input color-bg-5" type="radio"
+                                        name="theme-background" id="switcher-background4">
+                                </div>
+                                <div class="form-check switch-select ps-0 mt-1 tooltip-static-demo color-bg-transparent">
+                                    <div class="theme-container-background"></div>
+                                    <div class="pickr-container-background"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-image mb-3">
+                            <p class="switcher-style-head">Menu With Background Image:</p>
+                            <div class="d-flex flex-wrap align-items-center switcher-style">
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img1" type="radio"
+                                        name="theme-background" id="switcher-bg-img">
+                                </div>
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img2" type="radio"
+                                        name="theme-background" id="switcher-bg-img1">
+                                </div>
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img3" type="radio" name="theme-background"
+                                        id="switcher-bg-img2">
+                                </div>
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img4" type="radio"
+                                        name="theme-background" id="switcher-bg-img3">
+                                </div>
+                                <div class="form-check switch-select m-2">
+                                    <input class="form-check-input bgimage-input bg-img5" type="radio"
+                                        name="theme-background" id="switcher-bg-img4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid canvas-footer"> 
+                    <a href="javascript:void(0);" id="reset-all" class="btn btn-danger m-1">Reset</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Switcher -->
+
+
+    <!-- Loader -->
+    <div id="loader" >
+        <img src="{% static "assets/images/media/loader.svg" %}" alt="">
+    </div>
+    <!-- Loader -->
+
+    <div class="page">
+         <!-- app-header -->
+         <header class="app-header">
+
+            <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid">
+
+                <!-- Start::header-content-left -->
+                <div class="header-content-left">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="{% static "assets/images/brand-logos/desktop-logo.png" %}" alt="logo" class="desktop-logo">
+                                <img src="{% static "assets/images/brand-logos/toggle-logo.png" %}" alt="logo" class="toggle-logo">
+                                <img src="{% static "assets/images/brand-logos/desktop-dark.png" %}" alt="logo" class="desktop-dark">
+                                <img src="{% static "assets/images/brand-logos/toggle-dark.png" %}" alt="logo" class="toggle-dark">
+                                <img src="{% static "assets/images/brand-logos/desktop-white.png" %}" alt="logo" class="desktop-white">
+                                <img src="{% static "assets/images/brand-logos/toggle-white.png" %}" alt="logo" class="toggle-white">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link -->
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-left -->
+
+                <!-- Start::header-content-right -->
+                <div class="header-content-right">
+
+                    <!-- Start::header-element -->
+                    <!-- (IMPORTANTE) se borro el boton de busqueda-->
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element country-selector">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown">
+                            <img src="{% static "assets/images/flags/chile_flag.jpg" %}" alt="img" class="rounded-circle header-link-icon">
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element header-theme-mode">
+                        <!-- Start::header-link|layout-setting -->
+                        <a href="javascript:void(0);" class="header-link layout-setting">
+                            <span class="light-layout">
+                                <!-- Start::header-link-icon -->
+                            <i class="bx bx-moon header-link-icon"></i>
+                                <!-- End::header-link-icon -->
+                            </span>
+                            <span class="dark-layout">
+                                <!-- Start::header-link-icon -->
+                            <i class="bx bx-sun header-link-icon"></i>
+                                <!-- End::header-link-icon -->
+                            </span>
+                        </a>
+                        <!-- End::header-link|layout-setting -->
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <!-- (IMPORTANTE) se borro el boton de carrito-->
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <!-- (IMPORTANTE) se borro el boton de notificaciones-->
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <!-- (IMPORTANTE) se borro el boton de tareas y full screen-->
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <div class="d-flex align-items-center">
+                                <div class="me-sm-2 me-0">
+                                    <img src="{% static "assets/images/faces/logo.png" %}" alt="img" width="40" height="32" class="rounded-circle">
+                                </div>
+                                <div class="d-sm-block d-none">
+                                    <p class="fw-semibold mb-0 lh-1">Roque Parada</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <li><a class="dropdown-item d-flex" href="/logout"><i class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</a></li>
+                        </ul>
+                    </div>  
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <!-- (IMPORTANTE) se borro el boton de shiwcher-->
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-right -->
+
+            </div>
+            <!-- End::main-header-container -->
+
+        </header>
+        <!-- /app-header -->
+        <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header">
+                <a href="/dash/" class="header-logo">
+                    <img src="{% static "assets/images/brand-logos/desktop-logo.png" %}" alt="logo" class="desktop-logo">
+                    <img src="{% static "assets/images/brand-logos/toggle-logo.png" %}" alt="logo" class="toggle-logo">
+                    <img src="{% static "assets/images/brand-logos/desktop-dark.png" %}" alt="logo" class="desktop-dark">
+                    <img src="{% static "assets/images/brand-logos/toggle-dark.png" %}" alt="logo" class="toggle-dark">
+                    <img src="{% static "assets/images/brand-logos/desktop-white.png" %}" alt="logo" class="desktop-white">
+                    <img src="{% static "assets/images/brand-logos/toggle-white.png" %}" alt="logo" class="toggle-white">
+                </a>
+            </div>
+            <!-- End::main-sidebar-header -->
+
+            <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll">
+
+                <!-- Start::nav -->
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <div class="slide-left" id="slide-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
+                    </div>
+                    <ul class="main-menu">
+                        <!-- Start::slide__category -->
+                        <li class="slide__category"><span class="category-name">Main</span></li>
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class="bx bx-home side-menu__icon"></i>
+                                <span class="side-menu__label">Dashboards<span class="badge bg-warning-transparent ms-2">2</span></span>
+                                <i class="fe fe-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Dashboards</a>
+                                </li>
+                                <li class="slide">
+                                    <a href="/dash/" class="side-menu__item">CRM Chile</a>
+                                </li>
+                                <li class="slide">
+                                    <a href="/dash/" class="side-menu__item">CRM Colombia</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- End::slide -->
+
+                        <!-- Start::slide__category -->
+                        <li class="slide__category"><span class="category-name">Tables</span></li>
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class="bx bx-table side-menu__icon"></i>
+                                <span class="side-menu__label">Tables<span class="badge bg-success-transparent ms-2">2</span></span>
+                                <i class="fe fe-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Tables</a>
+                                </li>
+                                <li class="slide">
+                                    <a href="{% url 'tables' %}" class="side-menu__item">Tables CLP</a>
+                                </li>
+                                <li class="slide">
+                                    <a href="{% url 'tables' %}" class="side-menu__item">Tables COP</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <!-- End::slide -->
+                    </ul>
+                    <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
+                </nav>
+                <!-- End::nav -->
+
+            </div>
+            <!-- End::main-sidebar -->
+
+        </aside>
+        <!-- End::app-sidebar -->
+
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                <!-- Page Header -->
+                
+                <!-- Page Header Close -->
+
+                <!-- Start::row-1 -->
+                <div class="container-fluid">
+                    <div class="card p2 mt-2">
+                    <div class="card-body  scrollable-div">
+                        <TABLE id="scrap-table" class="table table-bordered table-success" BORDER>
+                            <TR>
+                                <TD>
+                                    <TH class="th-tables">USDT</TH>
+                                    <TH class="th-tables">BTC</TH>
+                                    <TH class="th-tables">ETH</TH>
+                                    <TH class="th-tables">BNB</TH>
+                                    <TH class="th-tables">DAI</TH>
+                                    <TH class="th-tables">FDUSD</TH>
+                                    <TH class="th-tables">DOGE</TH>
+                                    <TH class="th-tables">ADA</TH>
+                                    <TH class="th-tables">XRP</TH>
+                                </TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">1</TH>
+                                <TD class="td-tables" id="buy-usdt-1">-</TD>
+                                <TD class="td-tables" id="buy-btc-1">-</TD>
+                                <TD class="td-tables" id="buy-eth-1">-</TD>
+                                <TD class="td-tables" id="buy-bnb-1">-</TD>
+                                <TD class="td-tables" id="buy-dai-1">-</TD>
+                                <TD class="td-tables" id="buy-fdusd-1">-</TD>
+                                <TD class="td-tables" id="buy-doge-1">-</TD>
+                                <TD class="td-tables" id="buy-ada-1">-</TD>
+                                <TD class="td-tables" id="buy-xrp-1">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">2</TH>
+                                <TD class="td-tables"id="buy-usdt-2">-</TD>
+                                <TD class="td-tables"id="buy-btc-2">-</TD>
+                                <TD class="td-tables"id="buy-eth-2">-</TD>
+                                <TD class="td-tables"id="buy-bnb-2">-</TD>
+                                <TD class="td-tables"id="buy-dai-2">-</TD>
+                                <TD class="td-tables"id="buy-fdusd-2">-</TD>
+                                <TD class="td-tables"id="buy-doge-2">-</TD>
+                                <TD class="td-tables"id="buy-ada-2">-</TD>
+                                <TD class="td-tables"id="buy-xrp-2">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">3</TH>
+                                <TD class="td-tables"id="buy-usdt-3">-</TD>
+                                <TD class="td-tables"id="buy-btc-3">-</TD>
+                                <TD class="td-tables"id="buy-eth-3">-</TD>
+                                <TD class="td-tables"id="buy-bnb-3">-</TD>
+                                <TD class="td-tables"id="buy-dai-3">-</TD>
+                                <TD class="td-tables"id="buy-fdusd-3">-</TD>
+                                <TD class="td-tables"id="buy-doge-3">-</TD>
+                                <TD class="td-tables"id="buy-ada-3">-</TD>
+                                <TD class="td-tables"id="buy-xrp-3">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">4</TH>
+                                <TD class="td-tables"id="buy-usdt-4">-</TD>
+                                <TD class="td-tables"id="buy-btc-4">-</TD>
+                                <TD class="td-tables"id="buy-eth-4">-</TD>
+                                <TD class="td-tables"id="buy-bnb-4">-</TD>
+                                <TD class="td-tables"id="buy-dai-4">-</TD>
+                                <TD class="td-tables"id="buy-fdusd-4">-</TD>
+                                <TD class="td-tables"id="buy-doge-4">-</TD>
+                                <TD class="td-tables"id="buy-ada-4">-</TD>
+                                <TD class="td-tables"id="buy-xrp-4">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">5</TH>
+                                <TD class="td-tables"id="buy-usdt-5">-</TD>
+                                <TD class="td-tables"id="buy-btc-5">-</TD>
+                                <TD class="td-tables"id="buy-eth-5">-</TD>
+                                <TD class="td-tables"id="buy-bnb-5">-</TD>
+                                <TD class="td-tables"id="buy-dai-5">-</TD>
+                                <TD class="td-tables"id="buy-fdusd-5">-</TD>
+                                <TD class="td-tables"id="buy-doge-5">-</TD>
+                                <TD class="td-tables"id="buy-ada-5">-</TD>
+                                <TD class="td-tables"id="buy-xrp-5">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">6</TH>
+                                <TD class="td-tables"id="buy-usdt-6">-</TD>
+                                <TD class="td-tables"id="buy-btc-6">-</TD>
+                                <TD class="td-tables"id="buy-eth-6">-</TD>
+                                <TD class="td-tables"id="buy-bnb-6">-</TD>
+                                <TD class="td-tables"id="buy-dai-6">-</TD>
+                                <TD class="td-tables"id="buy-fdusd-6">-</TD>
+                                <TD class="td-tables"id="buy-doge-6">-</TD>
+                                <TD class="td-tables"id="buy-ada-6">-</TD>
+                                <TD class="td-tables"id="buy-xrp-6">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">7</TH>
+                                <TD class="td-tables"id="buy-usdt-7">-</TD>
+                                <TD class="td-tables"id="buy-btc-7">-</TD>
+                                <TD class="td-tables"id="buy-eth-7">-</TD>
+                                <TD class="td-tables"id="buy-bnb-7">-</TD>
+                                <TD class="td-tables"id="buy-dai-7">-</TD>
+                                <TD class="td-tables"id="buy-fdusd-7">-</TD>
+                                <TD class="td-tables"id="buy-doge-7">-</TD>
+                                <TD class="td-tables"id="buy-ada-7">-</TD>
+                                <TD class="td-tables"id="buy-xrp-7">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">8</TH>
+                                <TD class="td-tables"id="buy-usdt-8">-</TD>
+                                <TD class="td-tables"id="buy-btc-8">-</TD>
+                                <TD class="td-tables"id="buy-eth-8">-</TD>
+                                <TD class="td-tables"id="buy-bnb-8">-</TD>
+                                <TD class="td-tables"id="buy-dai-8">-</TD>
+                                <TD class="td-tables"id="buy-fdusd-8">-</TD>
+                                <TD class="td-tables"id="buy-doge-8">-</TD>
+                                <TD class="td-tables"id="buy-ada-8">-</TD>
+                                <TD class="td-tables"id="buy-xrp-8">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">9</TH>
+                                <TD class="td-tables"id="buy-usdt-9">-</TD>
+                                <TD class="td-tables"id="buy-btc-9">-</TD>
+                                <TD class="td-tables"id="buy-eth-9">-</TD>
+                                <TD class="td-tables"id="buy-bnb-9">-</TD>
+                                <TD class="td-tables"id="buy-dai-9">-</TD>
+                                <TD class="td-tables"id="buy-fdusd-9">-</TD>
+                                <TD class="td-tables"id="buy-doge-9">-</TD>
+                                <TD class="td-tables"id="buy-ada-9">-</TD>
+                                <TD class="td-tables"id="buy-xrp-9">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">10</TH>
+                                <TD class="td-tables"id="buy-usdt-10">-</TD>
+                                <TD class="td-tables"id="buy-btc-10">-</TD>
+                                <TD class="td-tables"id="buy-eth-10">-</TD>
+                                <TD class="td-tables"id="buy-bnb-10">-</TD>
+                                <TD class="td-tables"id="buy-dai-10">-</TD>
+                                <TD class="td-tables"id="buy-fdusd-10">-</TD>
+                                <TD class="td-tables"id="buy-doge-10">-</TD>
+                                <TD class="td-tables"id="buy-ada-10">-</TD>
+                                <TD class="td-tables"id="buy-xrp-10">-</TD>
+                            </TR>
+                        </TABLE>
+                    </div>
+                    </div>
+                    <div class="card mb-2">
+                    <div class="card-body scrollable-div ">
+                        <TABLE id="scrap-table" class="table table-bordered table-danger" BORDER>
+                            <TR>
+                                <TD>
+                                    <TH class="th-tables">USDT</TH>
+                                    <TH class="th-tables">BTC</TH>
+                                    <TH class="th-tables">ETH</TH>
+                                    <TH class="th-tables">BNB</TH>
+                                    <TH class="th-tables">DAI</TH>
+                                    <TH class="th-tables">FDUSD</TH>
+                                    <TH class="th-tables">DOGE</TH>
+                                    <TH class="th-tables">ADA</TH>
+                                    <TH class="th-tables">XRP</TH>
+                                </TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">1</TH>
+                                <TD class="td-tables"id="sell-usdt-1">-</TD>
+                                <TD class="td-tables"id="sell-btc-1">-</TD>
+                                <TD class="td-tables"id="sell-eth-1">-</TD>
+                                <TD class="td-tables"id="sell-bnb-1">-</TD>
+                                <TD class="td-tables"id="sell-dai-1">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-1">-</TD>
+                                <TD class="td-tables"id="sell-doge-1">-</TD>
+                                <TD class="td-tables"id="sell-ada-1">-</TD>
+                                <TD class="td-tables"id="sell-xrp-1">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">2</TH>
+                                <TD class="td-tables"id="sell-usdt-2">-</TD>
+                                <TD class="td-tables"id="sell-btc-2">-</TD>
+                                <TD class="td-tables"id="sell-eth-2">-</TD>
+                                <TD class="td-tables"id="sell-bnb-2">-</TD>
+                                <TD class="td-tables"id="sell-dai-2">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-2">-</TD>
+                                <TD class="td-tables"id="sell-doge-2">-</TD>
+                                <TD class="td-tables"id="sell-ada-2">-</TD>
+                                <TD class="td-tables"id="sell-xrp-2">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">3</TH>
+                                <TD class="td-tables"id="sell-usdt-3">-</TD>
+                                <TD class="td-tables"id="sell-btc-3">-</TD>
+                                <TD class="td-tables"id="sell-eth-3">-</TD>
+                                <TD class="td-tables"id="sell-bnb-3">-</TD>
+                                <TD class="td-tables"id="sell-dai-3">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-3">-</TD>
+                                <TD class="td-tables"id="sell-doge-3">-</TD>
+                                <TD class="td-tables"id="sell-ada-3">-</TD>
+                                <TD class="td-tables"id="sell-xrp-3">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">4</TH>
+                                <TD class="td-tables"id="sell-usdt-4">-</TD>
+                                <TD class="td-tables"id="sell-btc-4">-</TD>
+                                <TD class="td-tables"id="sell-eth-4">-</TD>
+                                <TD class="td-tables"id="sell-bnb-4">-</TD>
+                                <TD class="td-tables"id="sell-dai-4">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-4">-</TD>
+                                <TD class="td-tables"id="sell-doge-4">-</TD>
+                                <TD class="td-tables"id="sell-ada-4">-</TD>
+                                <TD class="td-tables"id="sell-xrp-4">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">5</TH>
+                                <TD class="td-tables"id="sell-usdt-5">-</TD>
+                                <TD class="td-tables"id="sell-btc-5">-</TD>
+                                <TD class="td-tables"id="sell-eth-5">-</TD>
+                                <TD class="td-tables"id="sell-bnb-5">-</TD>
+                                <TD class="td-tables"id="sell-dai-5">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-5">-</TD>
+                                <TD class="td-tables"id="sell-doge-5">-</TD>
+                                <TD class="td-tables"id="sell-ada-5">-</TD>
+                                <TD class="td-tables"id="sell-xrp-5">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">6</TH>
+                                <TD class="td-tables"id="sell-usdt-6">-</TD>
+                                <TD class="td-tables"id="sell-btc-6">-</TD>
+                                <TD class="td-tables"id="sell-eth-6">-</TD>
+                                <TD class="td-tables"id="sell-bnb-6">-</TD>
+                                <TD class="td-tables"id="sell-dai-6">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-6">-</TD>
+                                <TD class="td-tables"id="sell-doge-6">-</TD>
+                                <TD class="td-tables"id="sell-ada-6">-</TD>
+                                <TD class="td-tables"id="sell-xrp-6">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">7</TH>
+                                <TD class="td-tables"id="sell-usdt-7">-</TD>
+                                <TD class="td-tables"id="sell-btc-7">-</TD>
+                                <TD class="td-tables"id="sell-eth-7">-</TD>
+                                <TD class="td-tables"id="sell-bnb-7">-</TD>
+                                <TD class="td-tables"id="sell-dai-7">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-7">-</TD>
+                                <TD class="td-tables"id="sell-doge-7">-</TD>
+                                <TD class="td-tables"id="sell-ada-7">-</TD>
+                                <TD class="td-tables"id="sell-xrp-7">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">8</TH>
+                                <TD class="td-tables"id="sell-usdt-8">-</TD>
+                                <TD class="td-tables"id="sell-btc-8">-</TD>
+                                <TD class="td-tables"id="sell-eth-8">-</TD>
+                                <TD class="td-tables"id="sell-bnb-8">-</TD>
+                                <TD class="td-tables"id="sell-dai-8">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-8">-</TD>
+                                <TD class="td-tables"id="sell-doge-8">-</TD>
+                                <TD class="td-tables"id="sell-ada-8">-</TD>
+                                <TD class="td-tables"id="sell-xrp-8">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">9</TH>
+                                <TD class="td-tables"id="sell-usdt-9">-</TD>
+                                <TD class="td-tables"id="sell-btc-9">-</TD>
+                                <TD class="td-tables"id="sell-eth-9">-</TD>
+                                <TD class="td-tables"id="sell-bnb-9">-</TD>
+                                <TD class="td-tables"id="sell-dai-9">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-9">-</TD>
+                                <TD class="td-tables"id="sell-doge-9">-</TD>
+                                <TD class="td-tables"id="sell-ada-9">-</TD>
+                                <TD class="td-tables"id="sell-xrp-9">-</TD>
+                            </TR>
+                            <TR>
+                                <TH class="xd">10</TH>
+                                <TD class="td-tables"id="sell-usdt-10">-</TD>
+                                <TD class="td-tables"id="sell-btc-10">-</TD>
+                                <TD class="td-tables"id="sell-eth-10">-</TD>
+                                <TD class="td-tables"id="sell-bnb-10">-</TD>
+                                <TD class="td-tables"id="sell-dai-10">-</TD>
+                                <TD class="td-tables"id="sell-fdusd-10">-</TD>
+                                <TD class="td-tables"id="sell-doge-10">-</TD>
+                                <TD class="td-tables"id="sell-ada-10">-</TD>
+                                <TD class="td-tables"id="sell-xrp-10">-</TD>
+                            </TR>
+                        </TABLE>
+                    </div>
+                    </div>
+                </div>
+                <!--End::row-1 -->
+            </div>
+        </div>
+        <!-- End::app-content -->
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span class="text-muted"> Copyright © <span id="year"></span> <a
+                        href="javascript:void(0);" class="text-dark fw-semibold">Siddhi Autotech</a>.
+                </span>
+            </div>
+        </footer>
+        <!-- Footer End -->
+    </div>
+    <!-- Scroll To Top -->
+    <div class="scrollToTop">
+        <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+    <!-- Scroll To Top -->
+    <script src="{% static "js/scripts.js" %}"></script>
+    <script src="{% static "js/scrap.js" %}"></script>
+    <script src="{% static "js/data_pagues.js" %}"></script>
+    <!-- Popper JS -->
+    <script src="{% static "assets/libs/@popperjs/core/umd/popper.min.js" %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static "assets/libs/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+    <!-- Defaultmenu JS -->
+    <script src="{% static "assets/js/defaultmenu.min.js" %}"></script>
+    <!-- Node Waves JS-->
+    <script src="{% static "assets/libs/node-waves/waves.min.js" %}"></script>
+    <!-- Sticky JS -->
+    <script src="{% static "assets/js/sticky.js" %}"></script>
+    <!-- Simplebar JS -->
+    <script src="{% static "assets/libs/simplebar/simplebar.min.js" %}"></script>
+    <script src="{% static "assets/js/simplebar.js" %}"></script>
+    <!-- Color Picker JS -->
+    <script src="{% static "assets/libs/@simonwep/pickr/pickr.es5.min.js" %}"></script>
+    <!-- Apex Charts JS -->
+    <script src="{% static "assets/libs/apexcharts/apexcharts.min.js" %}"></script>
+    <!-- Crypto-Dashboard JS -->
+    <!-- Custom-Switcher JS -->
+    <script src="{% static "assets/js/custom-switcher.min.js" %}"></script>
+    <!-- Custom JS -->
+    <script src="{% static ".//assets/js/custom.js" %}"></script>
+    <!--DataTable-->
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- DataTable.js -->
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+    <!-- Agrega el archivo de idioma después de la referencia principal de DataTables -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
